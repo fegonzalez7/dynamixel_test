@@ -15,7 +15,8 @@ from trajectory_msgs.msg import  JointTrajectory, JointTrajectoryPoint
 class JointTrajectoryActionServer(object):
 
     def __init__(self, controller_name):
-        self.dx_trajectory_pub = rospy.Publisher ("/joint_trajectory", JointTrajectory, queue_size=10)  
+        # self.dx_trajectory_pub = rospy.Publisher ("/joint_trajectory", JointTrajectory, queue_size=10)  
+        self.dx_trajectory_pub = rospy.Publisher ("/px_controller/command", JointTrajectory, queue_size=10)  
         self._action_ns = controller_name + '/follow_joint_trajectory'
         rospy.loginfo('Starting controller: {}'.format(self._action_ns))
         self._as = actionlib.SimpleActionServer(

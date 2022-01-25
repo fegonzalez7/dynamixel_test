@@ -1,5 +1,5 @@
 <launch>
-  <arg name="usb_port"                default="/dev/ttyUSB1"/>
+  <arg name="usb_port"                default="/dev/ttyUSB0"/>
   <arg name="dxl_baud_rate"           default="1000000"/>
   <arg name="namespace"               default="dynamixel_workbench"/>
 
@@ -22,15 +22,15 @@
         seperation_between_wheels: 0.160  <!--default value is set by reference of TB3-->
         radius_of_wheel: 0.033            <!--default value is set by reference of TB3-->
     </rosparam>
-    <!-- <remap from="/dynamixel_workbench/joint_trajectory" to="joint_trajectory"/> -->
+    <remap from="/dynamixel_workbench/joint_trajectory" to="joint_trajectory"/>
   </node>
 
-  <!-- <node name="px_controller" pkg="dynamixel_test" type="dynamixel_controller_spawner.py" 
-        output="screen" args="px_controller"/> -->
+  <node name="px_controller" pkg="dynamixel_test" type="dynamixel_controller_spawner.py" 
+        output="screen" args="px_controller"/>
   
   <!-- Create controller manager-->
-  <!-- <rosparam file="$(find dynamixel_test)/px_controller.yaml" command="load"/>
+  <rosparam file="$(find dynamixel_test)/px_controller.yaml" command="load"/>
   <node name="robot_ctrller" pkg="controller_manager" type="spawner" respawn="false" output="screen"
       args=  "joint_state_controller
-              px_controller"/> -->
+              px_controller"/>
 </launch>
