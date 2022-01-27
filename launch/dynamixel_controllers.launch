@@ -25,12 +25,12 @@
     <remap from="/dynamixel_workbench/joint_trajectory" to="joint_trajectory"/>
   </node>
 
-  <node name="px_controller" pkg="dynamixel_test" type="dynamixel_controller_spawner.py" 
+  <!-- <node name="px_controller" pkg="dynamixel_test" type="dynamixel_controller_spawner.py" 
         output="screen" args="px_controller"/>
-  
+   -->
   <!-- Create controller manager-->
-  <rosparam file="$(find dynamixel_test)/px_controller.yaml" command="load"/>
+  <!-- <rosparam file="$(find dynamixel_test)/px_controller.yaml" command="load"/>
   <node name="robot_ctrller" pkg="controller_manager" type="spawner" respawn="false" output="screen"
       args=  "joint_state_controller
-              px_controller"/>
+              px_controller"/> -->
 </launch>
