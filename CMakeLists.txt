@@ -8,7 +8,6 @@ project(dynamixel_test)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  dynamixel_controllers
   roscpp
   rospy
   std_msgs
@@ -161,7 +160,6 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-  src/dynamixel_controller_spawner.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
