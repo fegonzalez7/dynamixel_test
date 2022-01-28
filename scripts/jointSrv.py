@@ -1,7 +1,15 @@
+"""
+Allows to use the service dynamixel_command 
+"""
 import rospy
 import time
 from std_msgs.msg import String
 from dynamixel_workbench_msgs.srv import DynamixelCommand
+
+__author__ = "F Gonzalez, S Realpe, JM Fajardo"
+__credits__ = ["Felipe Gonzalez", "Sebastian Realpe", "Jose Manuel Fajardo", "Robotis"]
+__email__ = "fegonzalezro@unal.edu.co"
+__status__ = "Test"
 
 def jointCommand(command, id_num, addr_name, value, time):
     #rospy.init_node('joint_node', anonymous=False)

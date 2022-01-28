@@ -1,7 +1,15 @@
+"""
+Allows to publish in the topic /joint_trajectory
+"""
 import rospy
 from std_msgs.msg import String
 from sensor_msgs.msg import JointState
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
+
+__author__ = "F Gonzalez, S Realpe, JM Fajardo"
+__credits__ = ["Felipe Gonzalez", "Sebastian Realpe", "Jose Manuel Fajardo", "Robotis"]
+__email__ = "fegonzalezro@unal.edu.co"
+__status__ = "Test"
 
 def joint_publisher():
     pub = rospy.Publisher('/joint_trajectory', JointTrajectory, queue_size=0)
